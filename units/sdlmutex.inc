@@ -1,6 +1,3 @@
-// based on "sdl_mutex.h" (2.0.14)
-{ TODO : Add type definitions (see todos below).  }
-
   {**
    *  Synchronization functions which can time out return this value
    *  if they time out.
@@ -11,7 +8,7 @@ const
   {**
    *  This is the timeout value which corresponds to never time out.
    *}
-  //SDL_MUTEX_MAXWAIT   (~(Uint32)0)
+  SDL_MUTEX_MAXWAIT = Not (cUint32(0));
 
 
   {**
@@ -19,7 +16,8 @@ const
    *}
 type
   {*The SDL mutex structure, defined in SDL_sysmutex.c *}
-  PSDL_Mutex = Pointer; //todo!
+  PSDL_Mutex = ^TSDL_Mutex;
+  TSDL_Mutex = record end;
 
   {**
    *  Create a mutex, initialized unlocked.
@@ -69,7 +67,8 @@ procedure SDL_DestroyMutex(mutex: PSDL_Mutex); cdecl;
    *}
 type
   {* The SDL semaphore structure, defined in SDL_sem.c *}
-  PSDL_Sem = Pointer; //todo!
+  PSDL_Sem = ^TSDL_Sem;
+  TSDL_Sem = record end;
 
   {**
    *  Create a semaphore, initialized with value, returns NULL on failure.
@@ -133,7 +132,8 @@ function SDL_SemValue(sem: PSDL_Sem): cuint32; cdecl;
    * }
 type
   {* The SDL condition variable structure, defined in SDL_cond.c *}
-  PSDL_Cond = Pointer; //todo!!
+  PSDL_Cond = ^TSDL_Cond;
+  TSDL_Cond = record end;
 
   {**
    *  Create a condition variable.
