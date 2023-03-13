@@ -221,6 +221,9 @@ function SDL_strrchr(str: PAnsiChar; chr: cint): PAnsiChar; cdecl;
 function SDL_strtokr(str, delim: PAnsiChar; saveptr: PPAnsiChar): PAnsiChar; cdecl;
   external SDL_LibName {$IFDEF DELPHI} {$IFDEF MACOS} name '_SDL_strtokr' {$ENDIF} {$ENDIF};
 
+function SDL_strrev(str: PAnsiChar): PAnsiChar; cdecl;
+  external SDL_LibName {$IFDEF DELPHI} {$IFDEF MACOS} name '_SDL_strrev' {$ENDIF} {$ENDIF};
+
 
 (*** --- iconv functions --- ***)
 
