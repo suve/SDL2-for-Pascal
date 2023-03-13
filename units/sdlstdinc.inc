@@ -154,6 +154,9 @@ function SDL_wcslcat(dst, src: pcwchar_t; maxlen: csize_t): csize_t; cdecl;
 function SDL_wcsdup(wstr: pcwchar_t): pcwchar_t; cdecl;
   external SDL_LibName {$IFDEF DELPHI} {$IFDEF MACOS} name '_SDL_wcsdup' {$ENDIF} {$ENDIF};
 
+function SDL_wcsstr(haystack, needle: pcwchar_t): pcwchar_t; cdecl;
+  external SDL_LibName {$IFDEF DELPHI} {$IFDEF MACOS} name '_SDL_wcsstr' {$ENDIF} {$ENDIF};
+
 
 (*** --- String functions --- ***)
 
@@ -178,6 +181,12 @@ function SDL_strlcat(dst, src: PAnsiChar; maxlen: csize_t): csize_t; cdecl;
 
 function SDL_strdup(str: PAnsiChar): PAnsiChar; cdecl;
   external SDL_LibName {$IFDEF DELPHI} {$IFDEF MACOS} name '_SDL_strdup' {$ENDIF} {$ENDIF};
+
+function SDL_strstr(haystack, needle: PAnsiChar): PAnsiChar; cdecl;
+  external SDL_LibName {$IFDEF DELPHI} {$IFDEF MACOS} name '_SDL_strstr' {$ENDIF} {$ENDIF};
+
+function SDL_strcasestr(haystack, needle: PAnsiChar): PAnsiChar; cdecl;
+  external SDL_LibName {$IFDEF DELPHI} {$IFDEF MACOS} name '_SDL_strcasestr' {$ENDIF} {$ENDIF};
 
 
 (*** --- iconv functions --- ***)
