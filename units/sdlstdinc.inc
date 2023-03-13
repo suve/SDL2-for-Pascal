@@ -145,6 +145,9 @@ procedure SDL_free(mem: Pointer); cdecl;
 function SDL_wcslen(wstr: pcwchar_t): csize_t; cdecl;
   external SDL_LibName {$IFDEF DELPHI} {$IFDEF MACOS} name '_SDL_wcslen' {$ENDIF} {$ENDIF};
 
+function SDL_wcslcpy(dst, src: pcwchar_t; maxlen: csize_t): csize_t; cdecl;
+  external SDL_LibName {$IFDEF DELPHI} {$IFDEF MACOS} name '_SDL_wcslcpy' {$ENDIF} {$ENDIF};
+
 
 (*** --- String functions --- ***)
 
@@ -157,6 +160,12 @@ function SDL_utf8strlen(str: PAnsiChar): csize_t; cdecl;
 
 function SDL_utf8strnlen(str: PAnsiChar; bytes: csize_t): csize_t; cdecl;
   external SDL_LibName {$IFDEF DELPHI} {$IFDEF MACOS} name '_SDL_utf8strnlen' {$ENDIF} {$ENDIF};
+
+function SDL_strlcpy(dst, src: PAnsiChar; maxlen: csize_t): csize_t; cdecl;
+  external SDL_LibName {$IFDEF DELPHI} {$IFDEF MACOS} name '_SDL_strlcpy' {$ENDIF} {$ENDIF};
+
+function SDL_utf8strlcpy(dst, src: PAnsiChar; dst_bytes: csize_t): csize_t; cdecl;
+  external SDL_LibName {$IFDEF DELPHI} {$IFDEF MACOS} name '_SDL_utf8strlcpy' {$ENDIF} {$ENDIF};
 
 
 (*** --- iconv functions --- ***)
