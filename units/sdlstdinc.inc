@@ -138,6 +138,30 @@ function SDL_realloc(mem: Pointer; size: csize_t): Pointer; cdecl;
 procedure SDL_free(mem: Pointer); cdecl;
   external SDL_LibName {$IFDEF DELPHI} {$IFDEF MACOS} name '_SDL_free' {$ENDIF} {$ENDIF};
 
+
+(*** --- WideString functions --- ***)
+
+
+function SDL_wcslen(wstr: pcwchar_t): csize_t; cdecl;
+  external SDL_LibName {$IFDEF DELPHI} {$IFDEF MACOS} name '_SDL_wcslen' {$ENDIF} {$ENDIF};
+
+
+(*** --- String functions --- ***)
+
+
+function SDL_strlen(str: PAnsiChar): csize_t; cdecl;
+  external SDL_LibName {$IFDEF DELPHI} {$IFDEF MACOS} name '_SDL_strlen' {$ENDIF} {$ENDIF};
+
+function SDL_utf8strlen(str: PAnsiChar): csize_t; cdecl;
+  external SDL_LibName {$IFDEF DELPHI} {$IFDEF MACOS} name '_SDL_utf8strlen' {$ENDIF} {$ENDIF};
+
+function SDL_utf8strnlen(str: PAnsiChar; bytes: csize_t): csize_t; cdecl;
+  external SDL_LibName {$IFDEF DELPHI} {$IFDEF MACOS} name '_SDL_utf8strnlen' {$ENDIF} {$ENDIF};
+
+
+(*** --- iconv functions --- ***)
+
+
 (**
  * This function converts a string between encodings in one pass, returning a
  * string that must be freed with SDL_free(), or NIL on error.
