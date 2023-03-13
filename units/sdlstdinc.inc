@@ -157,6 +157,18 @@ function SDL_wcsdup(wstr: pcwchar_t): pcwchar_t; cdecl;
 function SDL_wcsstr(haystack, needle: pcwchar_t): pcwchar_t; cdecl;
   external SDL_LibName {$IFDEF DELPHI} {$IFDEF MACOS} name '_SDL_wcsstr' {$ENDIF} {$ENDIF};
 
+function SDL_wcscmp(first, second: pcwchar_t): cint; cdecl;
+  external SDL_LibName {$IFDEF DELPHI} {$IFDEF MACOS} name '_SDL_wcscmp' {$ENDIF} {$ENDIF};
+
+function SDL_wcsncmp(first, second: pcwchar_t; maxlen: csize_t): cint; cdecl;
+  external SDL_LibName {$IFDEF DELPHI} {$IFDEF MACOS} name '_SDL_wcsncmp' {$ENDIF} {$ENDIF};
+
+function SDL_wcscasecmp(first, second: pcwchar_t): cint; cdecl;
+  external SDL_LibName {$IFDEF DELPHI} {$IFDEF MACOS} name '_SDL_wcscasecmp' {$ENDIF} {$ENDIF};
+
+function SDL_wcsncasecmp(first, second: pcwchar_t; maxlen: csize_t): cint; cdecl;
+  external SDL_LibName {$IFDEF DELPHI} {$IFDEF MACOS} name '_SDL_wcsncasecmp' {$ENDIF} {$ENDIF};
+
 
 (*** --- String functions --- ***)
 
@@ -187,6 +199,18 @@ function SDL_strstr(haystack, needle: PAnsiChar): PAnsiChar; cdecl;
 
 function SDL_strcasestr(haystack, needle: PAnsiChar): PAnsiChar; cdecl;
   external SDL_LibName {$IFDEF DELPHI} {$IFDEF MACOS} name '_SDL_strcasestr' {$ENDIF} {$ENDIF};
+
+function SDL_strcmp(first, second: PAnsiChar): cint; cdecl;
+  external SDL_LibName {$IFDEF DELPHI} {$IFDEF MACOS} name '_SDL_strcmp' {$ENDIF} {$ENDIF};
+
+function SDL_strncmp(first, second: PAnsiChar; maxlen: csize_t): cint; cdecl;
+  external SDL_LibName {$IFDEF DELPHI} {$IFDEF MACOS} name '_SDL_strncmp' {$ENDIF} {$ENDIF};
+
+function SDL_strcasecmp(first, second: PAnsiChar): cint; cdecl;
+  external SDL_LibName {$IFDEF DELPHI} {$IFDEF MACOS} name '_SDL_strcasecmp' {$ENDIF} {$ENDIF};
+
+function SDL_strncasecmp(first, second: PAnsiChar; maxlen: csize_t): cint; cdecl;
+  external SDL_LibName {$IFDEF DELPHI} {$IFDEF MACOS} name '_SDL_strncasecmp' {$ENDIF} {$ENDIF};
 
 
 (*** --- iconv functions --- ***)
