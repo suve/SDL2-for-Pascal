@@ -224,6 +224,12 @@ function SDL_strtokr(str, delim: PAnsiChar; saveptr: PPAnsiChar): PAnsiChar; cde
 function SDL_strrev(str: PAnsiChar): PAnsiChar; cdecl;
   external SDL_LibName {$IFDEF DELPHI} {$IFDEF MACOS} name '_SDL_strrev' {$ENDIF} {$ENDIF};
 
+function SDL_strupr(str: PAnsiChar): PAnsiChar; cdecl;
+  external SDL_LibName {$IFDEF DELPHI} {$IFDEF MACOS} name '_SDL_strupr' {$ENDIF} {$ENDIF};
+
+function SDL_strlwr(str: PAnsiChar): PAnsiChar; cdecl;
+  external SDL_LibName {$IFDEF DELPHI} {$IFDEF MACOS} name '_SDL_strlwr' {$ENDIF} {$ENDIF};
+
 
 (*** --- iconv functions --- ***)
 
