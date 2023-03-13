@@ -212,6 +212,15 @@ function SDL_strcasecmp(first, second: PAnsiChar): cint; cdecl;
 function SDL_strncasecmp(first, second: PAnsiChar; maxlen: csize_t): cint; cdecl;
   external SDL_LibName {$IFDEF DELPHI} {$IFDEF MACOS} name '_SDL_strncasecmp' {$ENDIF} {$ENDIF};
 
+function SDL_strchr(str: PAnsiChar; chr: cint): PAnsiChar; cdecl;
+  external SDL_LibName {$IFDEF DELPHI} {$IFDEF MACOS} name '_SDL_strchr' {$ENDIF} {$ENDIF};
+
+function SDL_strrchr(str: PAnsiChar; chr: cint): PAnsiChar; cdecl;
+  external SDL_LibName {$IFDEF DELPHI} {$IFDEF MACOS} name '_SDL_strrchr' {$ENDIF} {$ENDIF};
+
+function SDL_strtokr(str, delim: PAnsiChar; saveptr: PPAnsiChar): PAnsiChar; cdecl;
+  external SDL_LibName {$IFDEF DELPHI} {$IFDEF MACOS} name '_SDL_strtokr' {$ENDIF} {$ENDIF};
+
 
 (*** --- iconv functions --- ***)
 
