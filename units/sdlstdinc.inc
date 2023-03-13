@@ -247,6 +247,7 @@ function SDL_iconv_string(Const tocode, fromcode, inbuf: PAnsiChar; inbytesleft:
 function SDL_iconv_utf8_locale(Const str: PAnsiChar): PAnsiChar; cdecl;
 function SDL_iconv_utf8_ucs2(Const str: PAnsiChar): pcUint16; cdecl;
 function SDL_iconv_utf8_ucs4(Const str: PAnsiChar): pcUint32; cdecl;
+function SDL_iconv_wchar_utf8(Const str: pcwchar_t): PAnsiChar; cdecl;
 
 (* The SDL implementation of iconv() returns these error codes *)
 const

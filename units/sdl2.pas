@@ -445,6 +445,11 @@ begin
 	Result := pcUint32(SDL_iconv_string('UCS-4-INTERNAL', 'UTF-8', str, SDL_strlen(str)+1))
 end;
 
+function SDL_iconv_wchar_utf8(Const str: pcwchar_t): PAnsiChar; cdecl;
+begin
+	Result := SDL_iconv_string('UTF-8', 'WCHAR_T', PAnsiChar(str), (SDL_wcslen(str) + 1) * sizeof(cwchar_t))
+end;
+
 //from "sdl_video.h"
 
 function SDL_WINDOWPOS_UNDEFINED_DISPLAY(X: Variant): Variant;
